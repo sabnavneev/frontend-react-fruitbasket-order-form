@@ -1,26 +1,28 @@
 import React from "react";
 
-function Fruit( {title, props1, props2, props3 } ){
+function Fruit( { emoticon, type, name, decrease, increase, counter, disabled } ){
     return (
         <div
             className="container">
-            <h1>{title}</h1>
+            <h1>{emoticon} {type}</h1>
             <div
                 className="btn-container">
                 <button
                     className="counter-btn"
                     type="button"
-                    onClick={props1}
+                    name={name}
+                    onClick={decrease}
+                    disabled={counter === 0}
                 >
                 -
                 </button>
                 <p
-                    className="counter">{props3}
+                    className="counter">{counter}
                 </p>
                 <button
                     className="counter-btn"
                     type="button"
-                    onClick={props2}
+                    onClick={increase}
                 >
                 +
                 </button>
